@@ -3,9 +3,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/login.vue'
 import Home from '../components/home.vue'
+import Welcome from '../components/welcome.vue'
+import User from '../components/user/Users.vue'
 import '../assets/css/global.css'
 import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+//请求拦截器
 axios.interceptors.request.use(config => {
   // 为请求头对象，添加 Token 验证的 Authorization 字段
   config.headers.Authorization = window.sessionStorage.getItem('token')
@@ -19,7 +22,13 @@ const router =  new VueRouter({
   routes: [
     { path: '/', redirect: '/login' }, // 重定向登录页面
     { path: '/login', component: Login },
-    { path: '/home', component: Home}
+    { path: '/home', 
+      component: Home ,
+      redirect:'/welcome',
+      children:[
+        { path:'/welcome', component: Welcome  },
+        { path:'/users', component: User  }
+    ]}
   ]
 })
 
