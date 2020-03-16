@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Vue from 'vue'
 import { Button, Form, FormItem, Input, Message, Container, Header , Aside, Main, Menu, Submenu, MenuItemGroup, MenuItem, breadcrumb
-       ,breadcrumbItem , Card , Col ,Row , Table , TableColumn, Switch ,  Tooltip, Pagination} from 'element-ui'
+       ,breadcrumbItem , Card , Col ,Row , Table , TableColumn, Switch ,  Tooltip, Pagination, Dialog} from 'element-ui'
 
 
 Vue.use(Button) 
@@ -26,6 +26,7 @@ Vue.use(Switch)
 Vue.use(TableColumn)
 Vue.use(Tooltip)
 Vue.use(Pagination)
+Vue.use(Dialog)
 
 
 
